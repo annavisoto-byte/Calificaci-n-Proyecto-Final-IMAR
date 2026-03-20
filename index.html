@@ -409,7 +409,7 @@
         // ==========================================================
         // URL DE GOOGLE APPS SCRIPT (Google Sheets)
         // ==========================================================
-        const GOOGLE_SCRIPT_URL = "URL_DE_TU_WEB_APP_AQUI";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw2bbp_SkF3dQx3cOtVz8tUqT_mKYLGOtXXJWcV6NW-iDxGflFUx3LqVs9XH0lUymYl/exec://script.google.com/macros/s/AKfycbw2bbp_SkF3dQx3cOtVz8tUqT_mKYLGOtXXJWcV6NW-iDxGflFUx3LqVs9XH0lUymYl/exec";
 
         // Referencias a los elementos del DOM
         const form = document.getElementById('evaluationForm');
@@ -495,7 +495,7 @@
 
             // Ejecutar envío a Google Sheets (si la URL está configurada)
             let sheetPromise = Promise.resolve();
-            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbw2bbp_SkF3dQx3cOtVz8tUqT_mKYLGOtXXJWcV6NW-iDxGflFUx3LqVs9XH0lUymYl/exec") {
+            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("http")) {
                 sheetPromise = fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors', // Evita problemas de CORS al hacer llamadas a Google Scripts
